@@ -14,8 +14,8 @@ public class StubPlugin extends JavaPlugin {
     }
 
     public void onEnable() {
-        Config.reload();
-        Lang.reload();
+        Config.reload(this);
+        Lang.reload(this);
 
         getServer().getPluginManager().registerEvents(new BukkitListener(), this);
 

@@ -1,10 +1,10 @@
 package net.pl3x.bukkit.stub.configuration;
 
 import com.google.common.base.Throwables;
-import net.pl3x.bukkit.stub.StubPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +22,7 @@ public class Config {
     /**
      * Reload the configuration file
      */
-    public static void reload() {
-        StubPlugin plugin = StubPlugin.getInstance();
+    public static void reload(Plugin plugin) {
         plugin.saveDefaultConfig();
         File configFile = new File(plugin.getDataFolder(), "config.yml");
         config = new YamlConfiguration();
