@@ -1,4 +1,4 @@
-package net.pl3x.bukkit.stub.listener;
+package net.pl3x.bukkit.lobby.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

@@ -6,13 +6,14 @@ author: "BillyGalbreath"
 api-version: "1.13"
 
 commands:
-  stub:
-    description: stub
-    usage: /<command> (reload)
+  lobby:
+    description: lobby
+    usage: /<command> (reload | version)
     aliases:
       - test
+      - hub
 
 permissions:
-  command.stub:
+  command.lobby:
     description: Allows to reload the configs
     default: op

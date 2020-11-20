@@ -1,8 +1,8 @@
-package net.pl3x.bukkit.stub.command;
+package net.pl3x.bukkit.lobby.command;
 
-import net.pl3x.bukkit.stub.StubPlugin;
-import net.pl3x.bukkit.stub.configuration.Config;
-import net.pl3x.bukkit.stub.configuration.Lang;
+import net.pl3x.bukkit.lobby.LobbyPlugin;
+import net.pl3x.bukkit.lobby.configuration.Config;
+import net.pl3x.bukkit.lobby.configuration.Lang;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -10,10 +10,10 @@ import org.bukkit.command.TabExecutor;
 import java.util.Collections;
 import java.util.List;
 
-public class CmdStub implements TabExecutor {
-    private final StubPlugin plugin;
+public class CmdLobby implements TabExecutor {
+    private final LobbyPlugin plugin;
 
-    public CmdStub(StubPlugin plugin) {
+    public CmdLobby(LobbyPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -27,7 +27,7 @@ public class CmdStub implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("command.stub")) {
+        if (!sender.hasPermission("command.lobby")) {
             Lang.send(sender, Lang.COMMAND_NO_PERMISSION);
             return true;
         }
