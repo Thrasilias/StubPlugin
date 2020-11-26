@@ -1,4 +1,4 @@
-package net.pl3x.bukkit.stub.configuration;
+package nl.thrasilias.muniverse.configuration;
 
 import com.google.common.base.Throwables;
 import org.bukkit.Bukkit;
@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
@@ -13,12 +14,16 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 public class Lang {
+    public static String MINECRAFT_CHAT_FORMAT = "";
+    public static String SERVER_ONLINE = "The server is now online!";
+    public static String SERVER_OFFLINE = "The server is now offline!";
     public static String COMMAND_NO_PERMISSION = "&4You do not have permission for that command!";
     public static String PLAYER_COMMAND = "&4This command is only available to players!";
 
     private static void init() {
         COMMAND_NO_PERMISSION = getString("command-no-permission", COMMAND_NO_PERMISSION);
         PLAYER_COMMAND = getString("player-command", PLAYER_COMMAND);
+        SERVER_ONLINE = getString("server-is-online", SERVER_ONLINE);
     }
 
     // ############################  DO NOT EDIT BELOW THIS LINE  ############################
@@ -78,6 +83,16 @@ public class Lang {
         for (String part : colorize(message).split("\n")) {
             Bukkit.getOnlinePlayers().forEach(recipient -> recipient.sendMessage(part));
             Bukkit.getConsoleSender().sendMessage(part);
+        }
+    }
+
+    public static void sendToAllPlayers(String message) {
+        for (String part : colorize(message).split("\n")) {
+            if (part != null && !part.isEmpty()) {
+                for (Player player:Bukkit.getOnlinePlayers()){
+                    player.sendMessage(part);
+                }
+            }
         }
     }
 

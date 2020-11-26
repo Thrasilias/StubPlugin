@@ -1,4 +1,4 @@
-package net.pl3x.bukkit.stub.listener;
+package nl.thrasilias.muniverse.listener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

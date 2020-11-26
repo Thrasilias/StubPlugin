@@ -1,8 +1,8 @@
-package net.pl3x.bukkit.stub.command;
+package nl.thrasilias.muniverse.command;
 
-import net.pl3x.bukkit.stub.StubPlugin;
-import net.pl3x.bukkit.stub.configuration.Config;
-import net.pl3x.bukkit.stub.configuration.Lang;
+import nl.thrasilias.muniverse.Main;
+import nl.thrasilias.muniverse.configuration.Config;
+import nl.thrasilias.muniverse.configuration.Lang;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -10,16 +10,16 @@ import org.bukkit.command.TabExecutor;
 import java.util.Collections;
 import java.util.List;
 
-public class CmdStub implements TabExecutor {
-    private final StubPlugin plugin;
+public class CmdBot implements TabExecutor {
+    private final Main plugin;
 
-    public CmdStub(StubPlugin plugin) {
+    public CmdBot(Main plugin) {
         this.plugin = plugin;
     }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 1 && "reload".startsWith(args[0].toLowerCase()) && sender.hasPermission("command.stub")) {
+        if (args.length == 1 && "reload".startsWith(args[0].toLowerCase()) && sender.hasPermission("command.bot")) {
             return Collections.singletonList("reload");
         }
         return Collections.emptyList();
@@ -27,12 +27,12 @@ public class CmdStub implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("command.stub")) {
+        if (!sender.hasPermission("command.bot")) {
             Lang.send(sender, Lang.COMMAND_NO_PERMISSION);
             return true;
         }
 
-        String response = "&d" + plugin.getName() + " v" + plugin.getDescription().getVersion();
+        String response = "&6" + plugin.getName() + " &7v" + plugin.getDescription().getVersion();
 
         if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
             Config.reload(plugin);
