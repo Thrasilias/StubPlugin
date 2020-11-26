@@ -1,4 +1,4 @@
-package net.pl3x.bukkit.stub.configuration;
+package nl.thrasilias.muniverse.chat.configuration;
 
 import com.google.common.base.Throwables;
 import org.bukkit.Bukkit;

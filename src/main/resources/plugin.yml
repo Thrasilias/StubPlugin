@@ -2,17 +2,19 @@ name: "${project.artifactId}"
 main: "${project.groupId}.${project.artifactId}"
 version: "${project.version}"
 description: "${project.artifactId} Bukkit Plugin"
-author: "BillyGalbreath"
+author: "Thrasilias"
 api-version: "1.13"
 
 commands:
-  stub:
-    description: stub
-    usage: /<command> (reload)
+  chat:
+    description: chat
+    usage: /<command> (reload | version)
     aliases:
-      - test
+      - chat
+      - ct
+      - chatreload
 
 permissions:
-  command.stub:
+  muniverse.command.chat:
     description: Allows to reload the configs
     default: op
