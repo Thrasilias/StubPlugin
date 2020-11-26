@@ -1,8 +1,8 @@
-package net.pl3x.bukkit.stub.command;
+package nl.thrasilias.muniverse.chat.command;
 
-import net.pl3x.bukkit.stub.StubPlugin;
-import net.pl3x.bukkit.stub.configuration.Config;
-import net.pl3x.bukkit.stub.configuration.Lang;
+import nl.thrasilias.muniverse.chat.Chat;
+import nl.thrasilias.muniverse.chat.configuration.Config;
+import nl.thrasilias.muniverse.chat.configuration.Lang;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -10,10 +10,10 @@ import org.bukkit.command.TabExecutor;
 import java.util.Collections;
 import java.util.List;
 
-public class CmdStub implements TabExecutor {
-    private final StubPlugin plugin;
+public class CmdChat implements TabExecutor {
+    private final Chat plugin;
 
-    public CmdStub(StubPlugin plugin) {
+    public CmdChat(Chat plugin) {
         this.plugin = plugin;
     }
 
