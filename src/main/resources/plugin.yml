@@ -2,7 +2,7 @@ name: "${project.artifactId}"
 main: "${project.groupId}.${project.artifactId}"
 version: "${project.version}"
 description: "${project.artifactId} Bukkit Plugin"
-author: "BillyGalbreath"
+author: "Thrasilias"
 api-version: "1.13"
 
 commands:
